@@ -406,6 +406,30 @@ p {
   font-weight: 500;
 }
 
+.split-section {
+  padding: clamp(2.4rem, 6vw, 4rem) 0;
+}
+
+.split-section__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  align-items: center;
+}
+
+.split-section__media img {
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.split-section__actions {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-top: 1.4rem;
+}
+
 .services {
   padding: clamp(2.4rem, 6vw, 4rem) 0;
 }
@@ -522,6 +546,41 @@ p {
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
+}
+
+.portfolio-grid,
+.portfolio-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.4rem;
+}
+
+.portfolio-item {
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.02);
+  display: grid;
+  gap: 0.8rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border 0.25s ease;
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.portfolio-item__content {
+  padding: 0 1.1rem 1.2rem;
+  display: grid;
+  gap: 0.3rem;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-6px);
+  border-color: rgba(201, 162, 74, 0.45);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
 }
 
 .process {
@@ -670,6 +729,127 @@ textarea {
   gap: 0.35rem;
 }
 
+.page-hero {
+  padding: clamp(2.5rem, 6vw, 5rem) 0 clamp(2.5rem, 6vw, 4rem);
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.04), transparent 50%);
+}
+
+.page-hero__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  align-items: center;
+}
+
+.page-hero__image img {
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.page-hero__actions {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-top: 1.4rem;
+}
+
+.page-section {
+  padding: clamp(2.4rem, 6vw, 4rem) 0;
+}
+
+.feature-grid,
+.highlight-grid,
+.industries__grid,
+.industries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+}
+
+.feature-card,
+.highlight-card,
+.industry-card {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.2rem 1.3rem;
+  background: rgba(255, 255, 255, 0.02);
+  display: grid;
+  gap: 0.6rem;
+}
+
+.cta {
+  padding: clamp(2.4rem, 6vw, 4rem) 0;
+}
+
+.cta__panel {
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: clamp(1.8rem, 4vw, 2.6rem);
+  background: linear-gradient(135deg, rgba(201, 162, 74, 0.18), rgba(255, 255, 255, 0.02));
+  display: grid;
+  gap: 1.6rem;
+  align-items: center;
+  box-shadow: var(--shadow);
+}
+
+.cta__actions {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.service-detail-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.service-detail {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 1.4rem;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.service-detail img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+}
+
+.checklist {
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.5rem;
+  color: var(--muted);
+}
+
+.checklist li::before {
+  content: '✓';
+  color: var(--accent);
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+
+.map-placeholder {
+  border: 1px dashed rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.03);
+}
+
 .footer {
   border-top: 1px solid var(--border);
   padding: 1.8rem 0;
@@ -783,6 +963,13 @@ textarea {
   }
 
   .hero__actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .page-hero__actions,
+  .split-section__actions,
+  .cta__actions {
     flex-direction: column;
     align-items: flex-start;
   }
